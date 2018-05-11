@@ -1,1 +1,10 @@
 
+/* Estilos Home*/
+
+header{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url(../img/home_hero-bg.jpg) no-repeat center;
+  background-size: cover;
+}
