@@ -1,7 +1,126 @@
 
-/* Estilos Home*/
+* {
+  box-sizing: border-box;
+}
 
-header{
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #181818;
+}
+
+h1,h2,h3, p, li {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.btn {
+  color: white;
+  padding: .8em 1.5em;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.btn-green {
+  background: #1dd1a1;
+}
+.btn-w-border {
+  border: 1px solid white;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.margin-top {
+  margin-top: 5em;
+}
+.auto {
+  margin: auto;
+}
+
+/* Navigation */
+nav {
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  margin: auto;
+  height: 5em;
+  padding: 0 5%;
+  position: fixed;
+  background: white;
+  align-items: center;
+  -webkit-box-shadow: 0px 2px 12px -6px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 12px -6px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 12px -6px rgba(0,0,0,0.5);
+}
+
+nav .logo {
+  height: 4em;
+  text-indent: -9999px;
+  background: url(../img/logo.svg) no-repeat center;
+  background-size: contain;
+}
+
+nav ul {
+  width: 22em;
+  margin-left: auto;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: #181818;
+  font-size: .8em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav ul li a.active {
+  color: #d8d8d8;
+}
+
+nav.nav_home {
+  position: absolute;
+  background: transparent;
+  box-shadow: none;
+}
+nav.nav_home .logo {
+  background: url(../img/logo_white.svg) no-repeat center;
+  background-size: contain;
+}
+nav.nav_home ul li a {
+  color: white;
+}
+/* END Navigation */
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos Home*/
+.header_home {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -9,96 +128,149 @@ header{
   background-size: cover;
 }
 
-.menu ul {}
-
-.menu ul li {
-  list-style: none;
-  float: right;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  padding: 10px 15px;
-  border: 0px solid #ccc;
-  color: white;
-  text-transform: uppercase;
-}
-
-
-
-h1 {
+.header_home h1 {
   text-align: center;
   color: white;
-  margin-top: 250px;
-  font-size:100px;
+  font-weight: bold;
+  font-size: 4.5em;
 }
-h2 {
-
+.header_home p {
   text-align: center;
   color: white;
   margin-top: 7px;
-  font-size: large;
 }
 
 .parrafo {
   width:100%;
-  height: 300px;
+  padding: 6em 0;
   overflow: hidden;
-  border: 0px solid;
-  margin-top: 10px;
   text-align: center;
-  position: center;
-}
-h3 {
-  text-align: center;
-  color: black;
-  margin-top: 70px;
-  font-size: large;
 }
 
-.btn {
-  text-decoration: none;
-  padding: 15px 17px;
-  border: 1px solid ##20B2AA;
-  color: white;
-  text-transform: uppercase;
-  background-color: #20B2AA;
+.parrafo p {
+  margin-bottom: 3em;
+  font-size: 1.4em;
+  max-width: 40em;
 }
-
 
 .cuerpo {
   width: 100%;
-  height: 50vh;
+  padding: 10em 0;
   position: relative;
   background: url(../img/home_dogs.jpg) no-repeat center;
   background-size: cover;
 }
 
-
-p {
-  text-align: left;
-  font-size: 25px;
-  margin-left: 30%;
-  margin-top: 25px;
-
-}
-
-.general {
-  text-decoration: none;
-  padding: 10px 15px;
-  border: 0px solid ##20B2AA;
+.cuerpo p {
   color: white;
-  background-color: #20B2AA;
-  float: right;
-
-
-
-}
-
-footer {
-  width: auto;
-  height: 100px;
+  font-size: 1.6em;
+  max-width: 40em;
   text-align: center;
-  color: black;
-  background-color: grey;
 }
+/* END Estilos Home*/
+
+/* Faqs */
+.header_faqs {
+  width: 100%;
+  height: 20em;
+  background: url(../img/faqs_hero-bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.header_faqs .header_text {
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+.header_text h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: .8em;
+}
+
+.header_text p {
+  font-weight: 300;
+  font-size: .9em;
+}
+/* END Faqs Header */
+
+section.questions {
+  padding: 6em 10%;
+}
+
+section.questions .dropdown {
+  width: 100%;
+  position: relative;
+  padding: 2em 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+section.questions .dropdown input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+    margin: 4px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+
+section.questions .dropdown label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.3em;
+    line-height: 24px;
+    font-weight: 600;
+    color: #0998b7;
+    padding-right: 10%;
+    font-family: "Montserrat", sans-serif;
+}
+
+section.questions .dropdown .answer {
+    max-height: 0;
+    overflow: hidden;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #656565;
+}
+
+section.questions .dropdown input[type=checkbox]:checked ~ .answer {
+    max-height: 100%;
+    margin: 1em 0;
+}
+/* END Faqs */
+
+/* Footer */
+footer {
+  background: gray;
+  padding: 2em 0;
+  text-align: center;
+}
+
+footer p, footer a {
+  color: white;
+}
+
+footer .social {
+  width: 8em;
+  display: flex;
+  margin: auto;
+  color: white;
+  margin-bottom: 2em;
+  justify-content: space-between;
+}
+
+footer .social a {
+  font-size: 1.4em;
+}
+
+footer p {
+  font-size: .8em;
+  font-weight: 300;
+}
+/* END Footer */
