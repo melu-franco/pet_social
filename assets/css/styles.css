@@ -251,6 +251,94 @@ section.questions .dropdown input[type=checkbox]:checked ~ .answer {
 }
 /* END Faqs */
 
+/* Form */
+.form{
+  display: flex;
+  width: 100%;
+}
+
+
+.titulo{
+font-size: 1.3em;
+line-height: 24px;
+font-weight: 600;
+color:black;
+font-family: "Montserrat", sans-serif;
+margin-bottom: 15px;
+}
+
+.bajada{
+  font-size: 0.8em;
+  line-height: 14px;
+  font-weight: 300;
+  color:black;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
+}
+
+.recordar{
+  font-size: 0.8em;
+  line-height: 24px;
+  font-weight: 400;
+  color:black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.login{
+width: 50%;
+font-size: 1.3em;
+line-height: 24px;
+font-weight: 600;
+color:black;
+padding-right: 10%;
+font-family: "Montserrat", sans-serif;
+justify-content: center;
+padding: 10%;
+}
+
+.register{
+width: 50%;
+font-size: 1.3em;
+line-height: 24px;
+font-weight: 600;
+color:black;
+padding-right: 10%;
+font-family: "Montserrat", sans-serif;
+justify-content: center;
+padding: 10%;
+}
+
+input.casillero{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.form button {
+    background-color: #1dd1a1;
+    color: white;
+    color: white;
+    padding: .8em 1.5em;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-top: 7px;
+    cursor: pointer;
+    width: 30%;
+    height: 40px;
+}
+
+.acompaña{
+  background:url(../img/home_dogs.jpg);
+  width:50%;
+  height: 800px;
+}
+
+
+/* END Form */
+
+
 /* Footer */
 footer {
   background: gray;
