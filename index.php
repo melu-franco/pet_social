@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Paws</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <?php include_once ('layouts/head.html') ?>
 
-    <!-- Styles -->
-    <link href= "assets/css/reset.css" rel="stylesheet">
-    <link href= "assets/css/styles.css" rel="stylesheet">
-  </head>
   <body>
       <div id="home">
 
@@ -43,27 +33,7 @@
             <p class="auto">Creemos que todos tenemos una misión en este mundo. Nos gusta pensar que la nuestra, es contribuir a que todos seamos un poco mas felices. </p>
         </section>
 
-        <footer>
-            <ul class="social">
-              <li>
-                <a href="https://facebook.com/" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                 <a href="https://www.instagram.com" target="_blank">
-                 <i class="fab fa-instagram"></i>
-               </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-            </ul>
-
-            <p>© 2018 Little Paws - All rights reserved</p>
-          </footer>
+       <?php include_once ('layouts/footer.html') ?>
 
       </div>
   </body>
