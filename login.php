@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
-  <?php include_once ('layouts/head.html') ?>
+  <?php include_once ('layouts/head.php') ?>
 
   <body>
 
-      <?php include_once ('layouts/nav.html') ?>
+      <?php include_once ('layouts/nav.php') ?>
 
 
       <section class="form margin-top">
@@ -38,7 +38,7 @@
 
       </section>
 
-      <?php include_once ('layouts/footer.html') ?>
+      <?php include_once ('layouts/footer.php') ?>
 
 </body>
 </html>

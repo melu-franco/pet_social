@@ -1,12 +1,13 @@
+<?php $pageTitle = 'Little Paws - Faqs'; ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
-  <?php include_once ('layouts/head.html') ?>
+  <?php include_once ('layouts/head.php') ?>
 
   <body>
     <div id="faqs">
 
-      <?php include_once ('layouts/nav.html') ?>
+      <?php include_once ('layouts/nav.php') ?>
 
       <header class="header_faqs">
         <div class="container">
@@ -79,7 +80,7 @@
       </div><!-- container -->
       </section>
 
-      <?php include_once ('layouts/footer.html') ?>
+      <?php include_once ('layouts/footer.php') ?>
 
     </div>
   </body>
