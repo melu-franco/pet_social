@@ -31,12 +31,16 @@ strong {
 
 .btn {
   color: white;
+  border: none;
   padding: .8em 1.5em;
   border-radius: 3px;
   text-transform: uppercase;
 }
 .btn-green {
   background: #1dd1a1;
+}
+.btn-blue {
+  background: #32a5ff;
 }
 .btn-w-border {
   border: 1px solid white;
@@ -157,7 +161,6 @@ header {
   max-width: 40em;
 }
 
-
 .cuerpo {
   width: 100%;
   padding: 10em 0;
@@ -252,11 +255,17 @@ section.questions .dropdown input[type=checkbox]:checked ~ .answer {
 /* END Faqs */
 
 /* Form */
+:focus {
+  outline: 0;
+}
+
+form input {
+  border: 1px solid #ddd;
+}
 .form{
   display: flex;
   width: 100%;
 }
-
 
 .titulo{
 font-size: 1.3em;
@@ -317,16 +326,14 @@ input.casillero{
 }
 
 .form button {
-    background-color: #1dd1a1;
-    color: white;
-    color: white;
-    padding: .8em 1.5em;
-    border-radius: 3px;
-    text-transform: uppercase;
-    margin-top: 7px;
-    cursor: pointer;
-    width: 30%;
-    height: 40px;
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    font-size: .75em;
+}
+
+.form label {
+  font-size: .85em;
 }
 
 .acompaña{
