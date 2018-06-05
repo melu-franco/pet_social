@@ -10,6 +10,8 @@
   $mail = "";
   $username = "";
 
+  $errores = [];
+  
   if ($_POST) {
 	  
     $errores = validarInformacion($_POST);
@@ -42,4 +44,5 @@
       $errorUsername = "error";
     }
   }
+  
  ?>

@@ -12,7 +12,7 @@ body {
   color: #181818;
 }
 
-h1,h2,h3, p, li {
+h1, h2, h3, p, li {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -140,6 +140,7 @@ header {
   font-weight: bold;
   font-size: 4.5em;
 }
+
 .header_home p {
   text-align: center;
   color: white;
@@ -257,6 +258,11 @@ section.questions .dropdown input[type=checkbox]:checked ~ .answer {
 /* Form */
 :focus {
   outline: 0;
+}
+
+.error {
+  color: red;
+  font-size: .8em;
 }
 
 form input {

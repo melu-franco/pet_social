@@ -26,7 +26,7 @@ function validarInformacion($datos) {
   } 
 
   if (strlen($datos["usuario"]) == 0) {
-    $errores["username"] = "Debe ingresar un nombre de usuario";
+    $errores["usuario"] = "Debe ingresar un nombre de usuario";
   }
 
   return $errores;
