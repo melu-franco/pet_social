@@ -45,6 +45,10 @@ strong {
 .btn-w-border {
   border: 1px solid white;
 }
+.btn-w-border:hover {
+    color: #181818;
+    background: white;
+}
 
 .flex {
   display: flex;
@@ -342,10 +346,15 @@ input.casillero{
   font-size: .85em;
 }
 
-.acompaña{
-  background:url(../img/home_dogs.jpg);
-  width:50%;
-  height: 800px;
+.bg-registro {
+    background:url(../img/bg-registro.jpg);
+    background-size: cover;
+    width:50%;
+}
+.bg-login {
+    background:url(../img/bg-login.jpg);
+    background-size: cover;
+    width:50%;
 }
 
 

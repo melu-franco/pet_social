@@ -2,6 +2,7 @@
   require_once("funciones.php");
 
   $errorNombre = "";
+  $errorApellido = "";
   $errorMail = "";
   $errorPassword = "";
   $errorUsername = "";

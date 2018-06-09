@@ -30,9 +30,7 @@
 
         </form>
 
-        <div class="acompaña">
-
-        </div>
+        <div class="bg-login"></div>
 
       <!-- <div class="img"></div> -->
 

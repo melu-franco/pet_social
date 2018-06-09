@@ -40,7 +40,7 @@
 
         </form>
 
-        <div class="acompaña">
+        <div class="bg-registro">
         </div>
 
       </section>
