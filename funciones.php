@@ -7,11 +7,11 @@ function validarInformacion($datos) {
 
   $errores = [];
 
-  if (strlen($datos["nombre"]) == 0) {
+  if (empty($datos["nombre"])) {
     $errores["nombre"] = "Debe ingresar un nombre";
   }
 
-  if (strlen($datos["mail"]) == 0) {
+  if (empty($datos["mail"])) {
     $errores["mail"] = "Debe ingresar un mail";
   }
   else if (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL) ) {
@@ -25,7 +25,7 @@ function validarInformacion($datos) {
     $errores["password"] = "La contraseña debe tener al menos 8 caracteres";
   } 
 
-  if (strlen($datos["usuario"]) == 0) {
+  if (empty($datos["usuario"])) {
     $errores["usuario"] = "Debe ingresar un nombre de usuario";
   }
 
@@ -122,7 +122,7 @@ function guardarImagen($usuario) {
 
 		$miArchivo = dirname(__FILE__);
 
-		$miArchivo = $miArchivo . "/img/";
+		$miArchivo = $miArchivo . "/uploads/";
 
     $miArchivo = $miArchivo. "perfil" . $id . "." . $ext;
 

@@ -20,18 +20,19 @@
 
           <label for=”nombre”>Nombre</label>
           <input id="nombre" class="casillero <?=$errorNombre?>" type="text" name="nombre" value="<?=$nombre?>">
-          <p class="error"><?php if (count($errores) > 0) { echo "$errores[nombre]"; } ?></p>
+          <p class="form_error"><?php if (!empty($errores["nombre"])){ echo "$errores[nombre]"; } ?></p>
 
           <label for=”usuario”>Usuario</label>
           <input id="usuario" class="casillero <?=$errorUsername?>" type="text" name="usuario" value="<?=$username?>">
-          <p class="error"><?php if (count($errores) > 0) { echo "$errores[usuario]"; } ?></p>
+          <p class="form_error"><?php if (!empty($errores["usuario"])) { echo "$errores[usuario]"; } ?></p>
 
           <label for=”mail”>Mail</label>
           <input id="mail" class="casillero <?=$errorMail?>" type="email" name="mail" value="<?=$mail?>">
-          <p class="error"><?php if (count($errores) > 0) { echo "$errores[mail]"; } ?></p>
+          <p class="form_error"><?php if (!empty($errores["mail"])) { echo "$errores[mail]"; } ?></p>
 
           <label for=”password”>Contraseña</label>
           <input class="casillero <?=$errorPassword?>" type="password" id="password" name="password" value="">
+          <p class="form_error"><?php if (!empty($errores["password"])) { echo "$errores[password]"; } ?></p>
 
           <label for="">Foto de Perfil</label>
           <input type="file" name="imgPerfil">

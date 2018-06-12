@@ -264,7 +264,7 @@ section.questions .dropdown input[type=checkbox]:checked ~ .answer {
   outline: 0;
 }
 
-.error {
+.form_error {
   color: red;
   font-size: .8em;
 }
