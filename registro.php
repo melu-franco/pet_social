@@ -36,7 +36,8 @@
 
           <label for="">Foto de Perfil</label>
           <input type="file" name="imgPerfil">
-          
+          <p class="form_error"><?php if (!empty($errores["imgPerfil"])) { echo "$errores[imgPerfil]"; } ?></p>
+
           <button type="submit" class="btn btn-blue">Crear usuario</button>
 
         </form>

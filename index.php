@@ -5,18 +5,10 @@
   <?php include_once ('layouts/head.php') ?>
 
   <body>
+
+    <?php include_once ('layouts/nav_home.php') ?>
+
       <div id="home">
-
-        <nav class="menu flex nav_home">
-          <a href="index.php" class="logo">Little Paws</a>
-          <ul class="nav_ul flex">
-            <li class="nav_li"><a class="active" href="index.php">Home</a></li>
-            <li class="nav_li"><a href="faq.php">Faqs</a></li>
-            <li class="nav_li"><a href="registro.php">Registro</a></li>
-            <li class="nav_li"><a class="btn btn-w-border" href="login.php">Login</a></li>
-          </ul>
-        </nav>
-
         <header class="header_home container"> <!-- comienzo header -->
            <h1> Little Paws </h1>
            <p> No creemos en las distancias, solo en los encuentros.</p>

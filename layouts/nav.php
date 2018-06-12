@@ -1,5 +1,5 @@
 <nav class="menu flex">
-  <div class="logo">Little Paws</div>
+  <a href="index.php" class="logo">Little Paws</a>
   <ul class="flex">
     <li><a href="index.php">Home</a></li>
     <li><a href="faq.php">Faqs</a></li>
