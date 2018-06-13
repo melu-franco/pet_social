@@ -2,6 +2,7 @@
   require_once("funciones.php");
 
   $errores = [];
+  $username = "";
 
   if ($_POST) {
 
