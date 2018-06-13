@@ -79,6 +79,18 @@ function dameUnoPorMail($mail) {
   return NULL;
 }
 
+function dameUnoPorUsername($username){
+  $todos = dameTodos();
+
+  foreach ($todos as $usuario) {
+    if ($usuario["usuario"] == $username){
+      return $usuario;
+    }
+  }
+
+  return null;
+}
+
 function dameUnoPorId($id) {
   $todos = dameTodos();
 
