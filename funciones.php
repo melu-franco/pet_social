@@ -1,35 +1,37 @@
 <?php
+
+session_start();
+
 function validarInformacion($datos) {
+    foreach ($datos as $key => $value) {
+      $datos[$key] = trim($value);
+    }
 
-  foreach ($datos as $key => $value) {
-    $datos[$key] = trim($value);
-  }
+    $errores = [];
 
-  $errores = [];
+    if (empty($datos["nombre"])) {
+      $errores["nombre"] = "Debe ingresar un nombre";
+    }
 
-  if (empty($datos["nombre"])) {
-    $errores["nombre"] = "Debe ingresar un nombre";
-  }
+    if (empty($datos["mail"])) {
+      $errores["mail"] = "Debe ingresar un mail";
+    } else if (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL) ) {
+      $errores["mail"] = "El mail ingresado no es válido";
+    } else if (dameUnoPorMail($datos["mail"]) != NULL) {
+      $errores["mail"] = "El mail ingresado ya existe";
+    }
 
-  if (empty($datos["mail"])) {
-    $errores["mail"] = "Debe ingresar un mail";
-  }
-  else if (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL) ) {
-    $errores["mail"] = "El mail ingresado no es válido";
-  }
-  else if (dameUnoPorMail($datos["mail"]) != NULL) {
-    $errores["mail"] = "El mail ingresado ya existe";
-  }
+    if (strlen($datos["password"]) < 5) {
+      $errores["password"] = "La contraseña debe tener al menos 5 caracteres";
+    } 
 
-  if (strlen($datos["password"]) < 8) {
-    $errores["password"] = "La contraseña debe tener al menos 8 caracteres";
-  } 
+    if (empty($datos["usuario"])) {
+      $errores["usuario"] = "Debe ingresar un nombre de usuario";
+    } else if (dameUnoPorUsername($datos["usuario"]) != NULL) {
+      $errores["usuario"] = "El nombre de usuario ingresado ya existe";
+    }
 
-  if (empty($datos["usuario"])) {
-    $errores["usuario"] = "Debe ingresar un nombre de usuario";
-  }
-
-  return $errores;
+    return $errores;
 }
 
 function crearUsuario($datos) {
@@ -55,7 +57,6 @@ function dameTodos() {
   $contenido = file_get_contents("usuarios.json");
 
   $usuariosJSON = explode(PHP_EOL, $contenido);
-
   array_pop($usuariosJSON);
 
   $usuariosFinal = [];
@@ -124,7 +125,6 @@ function guardarImagen($usuario) {
 	{
 		$nombre=$_FILES["imgPerfil"]["name"];
 		$archivo=$_FILES["imgPerfil"]["tmp_name"];
-
 		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
     if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
@@ -133,9 +133,7 @@ function guardarImagen($usuario) {
     }
 
 		$miArchivo = dirname(__FILE__);
-
 		$miArchivo = $miArchivo . "/uploads/";
-
     $miArchivo = $miArchivo. "perfil" . $id . "." . $ext;
 
 		move_uploaded_file($archivo, $miArchivo);
@@ -144,6 +142,31 @@ function guardarImagen($usuario) {
   }
 
   return $errores;
+}
+
+//Login
+function login($usuario) {
+  $_SESSION["usuario"] = $usuario["usuario"];
+  setcookie("usuario", $usuario["usuario"], time()+3600);
+}
+
+function controlarLogin() {
+    if (isset($_SESSION["usuario"])) {
+        return true;
+    } else {
+        if (isset($_COOKIE["usuario"])) {
+            $_SESSION["usuario"] = $_COOKIE["usuario"];
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function logout() {
+    session_destroy();
+    setcookie("usuario", "", -1);
 }
 
 

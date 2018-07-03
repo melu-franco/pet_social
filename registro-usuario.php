@@ -24,7 +24,7 @@
       $errores = array_merge($errores, $erroresDeImagen);
       if (count($errores) == 0) {
         guardarUsuario($usuario);
-        header("location:profile.php");exit;
+        header("location:login.php");exit;
       }
     }
 

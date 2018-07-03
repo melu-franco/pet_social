@@ -1,22 +1,28 @@
 <?php
   require_once("funciones.php");
 
-  $errores = [];
-  $username = "";
+  function login($usuario) {
+    $_SESSION["email"] = $usuario["email"];
+    setcookie("email", $usuario["email"], time()+3600);
+  }
 
-  if ($_POST) {
+  function controlarLogin() {
+      if (isset($_SESSION["email"])) {
+          return true;
+      } else {
+          if (isset($_COOKIE["email"])) {
+              $_SESSION["email"] = $_COOKIE["email"];
+              return true;
+          } else {
+              return false;
+          }
+      }
+  }
 
-    $usuario = dameUnoPorUsername($_POST['usuario']);
-
-    if(password_verify($_POST['password'], $usuario['password'])){
-      session_start();
-      header("Location: profile.php");
-    }else{
-      $errores['password'] = "La contraseña no es valida";
-    }
-
-
-    }
+  function logout() {
+      session_destroy();
+      setcookie("email", "", -1);
+  }
   
 
  ?>
