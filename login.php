@@ -1,5 +1,29 @@
-<?php $pageTitle = 'Little Paws - Login'; ?>
-<?php include_once ('login-usuario.php') ?>
+<?php 
+$pageTitle = 'Little Paws - Login'; 
+$current_section = 'login';
+
+require_once "funciones.php";
+
+  $errores = [];
+
+  if ($_POST) {
+
+    $usuario = dameUnoPorUsername($_POST['usuario']);
+
+    if ($usuario !== null) {
+      if(password_verify($_POST['password'], $usuario['password'])){
+        login($usuario);
+      } else {
+        $errores['password'] = "La contraseña ingresada no es valida";
+      }
+    }
+  }
+
+  if (controlarLogin()) {
+    header('Location: perfil.php');
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -9,33 +33,38 @@
   <body>
 
       <?php include_once ('layouts/nav.php') ?>
-      <?php var_dump($errores); ?>
 
+      <section class="section--login -margin-top flex flex--column__mobile">
+        
+      <div class="section section--form col half">
+        <h2 class="section__title">Iniciar sesión</h2>
+        <form class="form form--login flex flex--column" action="" method="post" enctype="multipart/form-data">
+          
+          <div class="form__field flex flex--column">
+            <label class="form__label" for=”usuario”>Usuario</label>
+            <input id="usuario" class="form__input <?=$errorUsername?>" type="text" name="usuario" value="<?=$username?>">
+            <p class="form--error"><?php if (count($errores) > 0) { echo "$errores[usuario]"; } ?></p>
+          </div>
 
-      <section class="form margin-top">
+          <div class="form__field flex flex--column">
+            <label class="form__label" for=”password”>Contraseña</label>
+            <input class="form__input <?=$errorPassword?>" type="password" id="password" name="password" value="">
+          </div>
 
-        <form class="login" action="" method="post" enctype="multipart/form-data">
-          <h2 class="titulo">Iniciar sesión</h2>
+          <div class="form__field flex">
+            <input class="input__checkbox" type="checkbox" id="recordarme">
+            <label for="recordarme"> Recordarme </label>
+          </div>
 
-          <label for=”usuario”>Usuario</label>
-          <input id="usuario" class="casillero <?=$errorUsername?>" type="text" name="usuario" value="<?=$username?>">
-          <p class="error"><?php if (count($errores) > 0) { echo "$errores[usuario]"; } ?></p>
-
-          <label for=”password”>Contraseña</label>
-          <input class="casillero <?=$errorPassword?>" type="password" id="password" name="password" value="">
-
-          <input type="checkbox" id="recordarme">
-          <label for="recordarme"> Recordarme </label>
-
-          <button type="submit" class="btn btn-blue">Enviar</button>
+          <button type="submit" class="btn btn--submit btn--blue">Enviar</button>
 
           <a href="" class="recordar">>>Olvidé mi contraseña</a>
 
         </form>
+        
+      </div>
 
-        <div class="bg-login"></div>
-
-      <!-- <div class="img"></div> -->
+      <div class="col half section--bg section--login__bg"></div>
 
       </section>
 
