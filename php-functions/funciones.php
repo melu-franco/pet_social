@@ -121,27 +121,30 @@ function guardarImagen($usuario) {
   $errores = [];
   $id = $usuario["id"];
 
-	if ($_FILES["imgPerfil"]["error"] == UPLOAD_ERR_OK)
-	{
-		$nombre=$_FILES["imgPerfil"]["name"];
-		$archivo=$_FILES["imgPerfil"]["tmp_name"];
-		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
+  if(!empty($_FILES["imgPerfil"])) {
+    if ($_FILES["imgPerfil"]["error"] == UPLOAD_ERR_OK) {
+      $nombre=$_FILES["imgPerfil"]["name"];
+      $archivo=$_FILES["imgPerfil"]["tmp_name"];
+      $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
-    if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
-      $errores["imgPerfil"] = "Solo acepto formatos jpg y png";
-      return $errores;
+      if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
+        $errores["imgPerfil"] = "Solo acepto formatos jpg y png";
+        return $errores;
+      }
+
+      $miArchivo = dirname(__FILE__);
+      $miArchivo = $miArchivo . "/uploads/";
+      $miArchivo = $miArchivo. "perfil" . $id . "." . $ext;
+
+      move_uploaded_file($archivo, $miArchivo);
+    } else if ($_FILES["imgPerfil"]["error"] > UPLOAD_ERR_OK) {
+      $errores["imgPerfil"] = "Hubo un error al procesar el archivo";
     }
-
-		$miArchivo = dirname(__FILE__);
-		$miArchivo = $miArchivo . "/uploads/";
-    $miArchivo = $miArchivo. "perfil" . $id . "." . $ext;
-
-		move_uploaded_file($archivo, $miArchivo);
-	} else {
-    $errores["imgPerfil"] = "Hubo un error al procesar el archivo";
+    return $errores;
+  } else {
+    return null;
   }
 
-  return $errores;
 }
 
 //Login

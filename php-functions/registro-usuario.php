@@ -20,8 +20,8 @@
       $usuario = crearUsuario($_POST);
 
       $erroresDeImagen = guardarImagen($usuario);
-
       $errores = array_merge($errores, $erroresDeImagen);
+      
       if (count($errores) == 0) {
         guardarUsuario($usuario);
         header("location:login.php");exit;
