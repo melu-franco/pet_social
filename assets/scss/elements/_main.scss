@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $base-font-size;
+    
+    @media(min-width:2500px) {
+        font-size: 24px;
+    }
+    @media(min-width:1921px) and (max-width:2499px) {
+       font-size: 20px;
+    }
+    @media (min-width: 1700px) and (max-width:1920px) {
+       font-size: 18px;
+    }
+    @media(max-width:460px) {
+       font-size: 15px;
+    }
+    @media(max-width:320px) {
+       font-size: 14px;
+    }
+}
+
+body {
+    margin: 0;
+    color: $black;
+    position: relative;
+    font-family: $primary-font;
+    line-height: $base-line-height;
+}
+
+main {
+    overflow: hidden;
+}
+  
+p {
+    line-height: $base-line-height;
+}
+
+a {
+    text-decoration: none;
+    font-family: $secondary-font;
+}
+
+:focus {
+    outline: 0;
+}
+  
+strong {
+    font-weight: bold;
+}
+
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+//Common classes
+.-upper {
+    text-transform: uppercase;
+}
+.-margin-top {
+    margin-top: 5em;
+}
+.-auto {
+    margin: auto;
+}
+.t-center {
+    text-align: center;
+}
+
+@import 'header';
+@import 'section';
+@import 'form';
+@import 'footer';
+

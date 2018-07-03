@@ -1,0 +1,35 @@
+//Colores
+$green: #1dd1a1;
+$blue: #32a5ff;
+
+$black: #1d1d1f;
+$light-gray: #d8d8d8;
+$gray: #656565;
+$orange:#ff4d00;
+
+$border-color: $light-gray;
+$box-shadow-nav: 0px 2px 12px -6px rgba(0,0,0,0.5);
+
+$color-primary: $green;
+$color-secondary: $blue;
+$error-color: $orange;
+
+.color-primary {
+    color: $color-primary;
+} 
+.-color-secondary {
+    color: $color-secondary;
+}
+.-color-black {
+    color: $black;
+}
+.-color-white {
+    color: white;
+}
+
+.-bg-black {
+    background-color: $black;
+}
+.-bg-primary{
+    background-color: $color-primary;
+}
