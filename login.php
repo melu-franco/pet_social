@@ -16,6 +16,8 @@ require_once "php-functions/funciones.php";
       } else {
         $errores['password'] = "La contraseña ingresada no es valida";
       }
+    } else {
+      $errores['usuario'] = "Debe ingresar un usuario";
     }
   }
 
@@ -49,6 +51,7 @@ require_once "php-functions/funciones.php";
           <div class="form__field flex flex--column">
             <label class="form__label" for=”password”>Contraseña</label>
             <input class="form__input <?=$errorPassword?>" type="password" id="password" name="password" value="">
+            <p class="form--error"><?php if (count($errores) > 0) { echo "$errores[password]"; } ?></p>
           </div>
 
           <div class="form__field flex">
