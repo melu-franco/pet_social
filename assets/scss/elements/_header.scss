@@ -57,6 +57,9 @@
         @include bg-img($logo--white, center);
         @include bg-size(contain);
       }
+      .nav__link {
+        color: white!important;
+      }
     }
 
     @at-root #{&}__menu {
