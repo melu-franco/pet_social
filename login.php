@@ -2,7 +2,7 @@
 $pageTitle = 'Little Paws - Login'; 
 $current_section = 'login';
 
-require_once "funciones.php";
+require_once "php-functions/funciones.php";
 
   $errores = [];
 
@@ -57,8 +57,6 @@ require_once "funciones.php";
           </div>
 
           <button type="submit" class="btn btn--submit btn--blue">Enviar</button>
-
-          <a href="" class="recordar">>>Olvidé mi contraseña</a>
 
         </form>
         

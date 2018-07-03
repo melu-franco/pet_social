@@ -1,7 +1,7 @@
 <?php 
 $pageTitle = 'Little Paws'; 
 $current_section = 'home';
-require_once "funciones.php";
+require_once "php-functions/funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

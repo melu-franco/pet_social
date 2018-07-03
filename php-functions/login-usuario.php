@@ -1,5 +1,5 @@
 <?php
-  require_once("funciones.php");
+  require_once "funciones.php";
 
   function login($usuario) {
     $_SESSION["email"] = $usuario["email"];

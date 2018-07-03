@@ -1,6 +1,6 @@
 <?php
-    require_once 'funciones.php';
+    require_once 'php-functions/funciones.php';
 
     logout();
-    header('Location: login.php');
+    header('Location: ../login.php');
 ?>

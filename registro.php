@@ -1,7 +1,7 @@
 <?php 
 $pageTitle = 'Little Paws - Registro'; 
 $current_section = 'registro';
-include_once ('registro-usuario.php');
+include_once ('php-functions/registro-usuario.php');
 ?>
 
 <!DOCTYPE html>
