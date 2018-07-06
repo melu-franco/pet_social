@@ -75,6 +75,7 @@ table {
 
 .btn {
   border: none;
+  display: block;
   padding: .8em 1.5em;
   text-transform: uppercase;
   -webkit-border-radius: 3px;

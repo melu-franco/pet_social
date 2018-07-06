@@ -1,5 +1,6 @@
 .btn {
     border: none;
+    display: block;
     padding: .8em 1.5em;
     text-transform: uppercase;
     @include border-radius(3px);
