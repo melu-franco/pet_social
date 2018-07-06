@@ -1,0 +1,39 @@
+.btn {
+    border: none;
+    display: block;
+    cursor: pointer;
+    padding: .8em 1.5em;
+    text-transform: uppercase;
+    @include border-radius(3px);
+
+    @at-root #{&}--green {
+        color: white!important;
+        background: $green;
+    }
+    @at-root #{&}--blue {
+        color: white!important;
+        background: $blue;
+    }
+    @at-root #{&}--white {
+        background: white;
+        color: $color-primary;
+    }
+    @at-root #{&}--border {
+        border: 1px solid;
+        &.white {
+            border-color: white;
+            color: white;
+            &:hover {
+                color: $black!important;
+                background: white;
+            }
+        }
+    }
+    @at-root #{&}--submit {
+        font-weight: $semi-bold;
+        font-size: $font-size-small;
+    }
+    &.max-width {
+        max-width: 12em;
+    }
+}

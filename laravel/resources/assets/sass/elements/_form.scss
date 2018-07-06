@@ -1,0 +1,24 @@
+/* Form */
+
+.form {
+  width: 100%;
+  margin-top: 2em;
+  @at-root #{&}__field {
+    margin: .5em 0 1.5em;
+  }
+  @at-root #{&}__input {
+    padding: 1em;
+    border: 1px solid $border-color;
+    &.error {
+      border-color: $error-color;
+    }
+  }
+  @at-root #{&}__label {
+    font-weight: bold;
+    font-size: $font-size-small;
+  }
+  @at-root #{&}--error {
+    color: $error-color;
+    font-size: $font-size-small;
+  }
+}
