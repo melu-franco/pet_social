@@ -62,6 +62,8 @@ require_once "php-functions/funciones.php";
           <button type="submit" class="btn btn--submit btn--blue">Enviar</button>
 
         </form>
+
+        <a href="registro.php" class="btn t-center -color-secondary">Todavía no tengo usuario</a>
         
       </div>
 
