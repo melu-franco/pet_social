@@ -1,5 +1,7 @@
 @extends ('app.layout')
 
+@section('title', 'Little Paws - Registro')
+
 @section('content')
 
     <section class="section--registro flex flex--column__mobile -margin-top">

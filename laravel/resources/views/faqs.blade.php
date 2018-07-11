@@ -1,5 +1,7 @@
 @extends ('app.layout')
 
+@section('title', 'Little Paws - Faqs')
+
 @section('content')
 
 <div id="faqs">
