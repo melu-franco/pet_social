@@ -83,6 +83,8 @@
     @at-root #{&}--header {
         padding-top: 6em;
         padding-bottom: 6em;
+        @include bg-img($profile--header, center);
+        @include bg-size(cover);
         @at-root #{&}__title {
             font-size: $title-size-medium;
             margin-bottom: 1em;

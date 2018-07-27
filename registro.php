@@ -34,9 +34,9 @@ include_once ('php-functions/registro-usuario.php');
           </div>
 
           <div class="form__field flex flex--column">
-            <label class="form__label" for=”mail”>Mail</label>
-            <input id="mail" class="form__input casillero <?=$errorMail?>" type="email" name="mail" value="<?=$mail?>">
-            <p class="form--error"><?php if (!empty($errores["mail"])) { echo "$errores[mail]"; } ?></p>
+            <label class="form__label" for=”mail”>Email</label>
+            <input id="email" class="form__input casillero <?=$errorEmail?>" type="email" name="email" value="<?=$email?>">
+            <p class="form--error"><?php if (!empty($errores["email"])) { echo "$errores[email]"; } ?></p>
           </div>
 
           <div class="form__field flex flex--column">
@@ -46,10 +46,18 @@ include_once ('php-functions/registro-usuario.php');
           </div>
 
           <div class="form__field flex flex--column">
+            <label>Confirmar password</label>
+            <input type="password" name="cpassword"> 
+            <p class="form--error"><?php if (!empty($errores["cpassword"])) { echo "$errores[cpassword]"; } ?></p>
+          </div>
+
+          <!--
+          <div class="form__field flex flex--column">
             <label class="form__label" for="">Foto de Perfil</label>
-            <input class="form__input-img" type="file" name="imgPerfil">
+            <input class="form__input-img" type="file" name="avatar">
             <p class="form--error"><?php if (!empty($errores["imgPerfil"])) { echo "$errores[imgPerfil]"; } ?></p>
           </div>
+          -->
 
           <button type="submit" class="btn btn--submit btn--blue">Crear usuario</button>
 
