@@ -4,11 +4,12 @@
   $errorNombre = "";
   $errorApellido = "";
   $errorMail = "";
+  $errorCpassword = "";
   $errorPassword = "";
   $errorUsername = "";
 
   $nombre = "";
-  $mail = "";
+  $email = "";
   $username = "";
 
   $errores = [];
@@ -29,13 +30,13 @@
     }
 
     $nombre = $_POST["nombre"];
-    $mail = $_POST["mail"];
+    $email = $_POST["email"];
     $username = $_POST["usuario"];
 
     if (isset($errores["nombre"])) {
       $errorNombre = "error";
     }
-    if (isset($errores["mail"])) {
+    if (isset($errores["email"])) {
       $errorMail = "error";
     }
     if (isset($errores["password"])) {

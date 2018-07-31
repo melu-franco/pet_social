@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
         <!-- Styles -->
-        <link href= "css/styles.css" rel="stylesheet">
+        <link href= "{{ asset('css/styles.css') }}" rel="stylesheet">
     </head>
     <body>
 

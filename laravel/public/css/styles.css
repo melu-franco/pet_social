@@ -694,6 +694,9 @@ strong {
 .dashboard--header {
   padding-top: 6em;
   padding-bottom: 6em;
+  background: url(../images/profile_hero-bg.jpg) no-repeat center;
+  -ms-background-size: cover;
+  background-size: cover;
 }
 
 .dashboard--header__title {

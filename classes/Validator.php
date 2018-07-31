@@ -44,7 +44,7 @@ class Validator {
             if ($datos["password"] != "" && $datos["cpassword"] != "" && $datos["password"] != $datos["cpassword"]) {
                 $errores["password"] = "Las contraseñas no coinciden";
             }
-          
+
             return $errores;
 
         

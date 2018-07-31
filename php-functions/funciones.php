@@ -13,12 +13,12 @@ function validarInformacion($datos) {
       $errores["nombre"] = "Debe ingresar un nombre";
     }
 
-    if (empty($datos["mail"])) {
-      $errores["mail"] = "Debe ingresar un mail";
+    if (empty($datos["email"])) {
+      $errores["email"] = "Debe ingresar un mail";
     } else if (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL) ) {
-      $errores["mail"] = "El mail ingresado no es válido";
+      $errores["email"] = "El mail ingresado no es válido";
     } else if (dameUnoPorMail($datos["mail"]) != NULL) {
-      $errores["mail"] = "El mail ingresado ya existe";
+      $errores["email"] = "El mail ingresado ya existe";
     }
 
     if (strlen($datos["password"]) < 5) {
@@ -37,7 +37,7 @@ function validarInformacion($datos) {
 function crearUsuario($datos) {
   $usuario = [
     "nombre" => $datos["nombre"],
-    "mail" => $datos["mail"],
+    "email" => $datos["email"],
     "usuario" => $datos["usuario"],
     "password" => password_hash($datos["password"], PASSWORD_DEFAULT),
     "id" => traerNuevoID()
@@ -72,7 +72,7 @@ function dameUnoPorMail($mail) {
   $todos = dameTodos();
 
   foreach ($todos as $usuario) {
-    if ($usuario["mail"] == $mail) {
+    if ($usuario["email"] == $mail) {
       return $usuario;
     }
   }

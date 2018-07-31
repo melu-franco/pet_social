@@ -7,10 +7,10 @@
         protected $db;
 
         public function __construct() {
-            $server = "localhost";
+            $servername = "localhost";
             $dbname = "little_paws";
             $username = "root";
-            $password = "";
+            $password = "root";
     
             try {
                 $db = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -62,7 +62,7 @@
             $usersFoundReturn = [];
      
             foreach ($usersFound as $user):
-                $usersFoundReturn[] = new User($user['username'],$user['email'], $user['password'], $user['id']);
+                $usersFoundReturn[] = new User($name['nombre'],$user['username'],$user['email'], $user['password'], $user['id']);
             endforeach;
 
             return $usersFoundReturn;
