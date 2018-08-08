@@ -30,6 +30,7 @@ class Auth {
 
     public function logout() {
         session_destroy();
+        setcookie("loggedin", "", -1);
     }
 
 

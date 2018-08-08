@@ -20,7 +20,7 @@ class Validator {
                 $errores["email"] = "Debe ingresar un email";
               } else if (!filter_var($datos["email"], FILTER_VALIDATE_EMAIL) ) {
                 $errores["email"] = "El email ingresado no es válido";
-              } else if ($db->searchUser($datos["email"]) != NULL) {
+              } else if ($db->searchEmail($datos["email"]) != NULL) {
                 $errores["email"] = "El email ingresado ya existe";
               }
 
@@ -69,8 +69,11 @@ class Validator {
             if (empty($datos["password"])) {   
                 $errores["password"] = "Debe ingresar una contraseña";
             } else if ($usuario != null) {
+                // var_dump(password_verify($datos["password"], $usuario->getPassword()));
+                // exit;
                 if (password_verify($datos["password"], $usuario->getPassword()) == false) {
-                    $errores["password"] = "La contraseña ingresada no es válida";
+
+                    $errores["password"] = "La contraseña ingresada no coincide con el usuario";
                 }
             }
             return $errores;

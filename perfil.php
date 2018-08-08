@@ -1,8 +1,14 @@
 <?php
-  require_once 'php-functions/funciones.php';
-  if (!(controlarLogin())) { 
-    header('Location:login.php');exit;
+  include("loader.php");
+  if (!$auth->loginControl()) 
+  {
+     header("Location: login.php");
+     exit;
   }
+  
+  $userLogged = $auth->userLogged($db);
+  $username = $userLogged->getUsername();
+  
 ?>
 
 <!doctype html>
@@ -13,13 +19,13 @@
   <body class="dashboard">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <?php if (controlarLogin()) : ?>
+  <?php if ($auth->loginControl()) : ?>
 
   <?php include_once ('layouts/nav_dashboard.php') ?>
 
   <div class="new-wrapper">
       <header class="dashboard--header -color-white flex flex--align-center flex--space-between">
-          <h1 class="title dashboard--header__title"> Hola <?php echo $_SESSION["usuario"]; ?>! </h1>
+          <h1 class="title dashboard--header__title"> Hola <?=$username ?>! </h1>
           <!--<a class="-color-white" href="logout.php">Logout</a>-->
 
           <!-- dropdown profile menu -->

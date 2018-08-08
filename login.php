@@ -2,28 +2,35 @@
 $pageTitle = 'Little Paws - Login'; 
 $current_section = 'login';
 
-require_once "php-functions/funciones.php";
+include_once("loader.php");
+require_once("classes/User.php");
 
-  $errores = [];
+$errores = [];
+$username = "";
 
-  if ($_POST) {
+	$errores = [];
+	if ($_POST) {
+      $errores = $validator->validateLogin($_POST, $db);
 
-    $usuario = dameUnoPorUsername($_POST['usuario']);
+      $errorPassword = "";
+      $errorUsername = "";
 
-    if ($usuario !== null) {
-      if(password_verify($_POST['password'], $usuario['password'])){
-        login($usuario);
-      } else {
-        $errores['password'] = "La contraseña ingresada no es valida";
+      $username = $_POST["usuario"];
+
+      if (isset($errores["password"])) {
+          $errorPassword = "error";
       }
-    } else {
-      $errores['usuario'] = "Debe ingresar un usuario";
-    }
-  }
+      if (isset($errores["usuario"])) {
+        $errorUsername = "error";
+      }
 
-  if (controlarLogin()) {
-    header('Location: perfil.php');
-  }
+    if (count($errores) == 0) {
+            $username = $_POST["usuario"];
+            $auth->login($username);
+          header("Location:perfil.php");
+      exit;
+    }
+}
 
 ?>
 
@@ -31,7 +38,6 @@ require_once "php-functions/funciones.php";
 <html lang="es" dir="ltr">
 
   <?php include_once ('layouts/head.php') ?>
-
   <body>
 
       <?php include_once ('layouts/nav.php') ?>
@@ -45,13 +51,13 @@ require_once "php-functions/funciones.php";
           <div class="form__field flex flex--column">
             <label class="form__label" for=”usuario”>Usuario</label>
             <input id="usuario" class="form__input <?=$errorUsername?>" type="text" name="usuario" value="<?=$username?>">
-            <p class="form--error"><?php if (count($errores) > 0) { echo "$errores[usuario]"; } ?></p>
+            <p class="form--error"><?php if (!empty($errores["usuario"])) { echo "$errores[usuario]"; } ?></p>
           </div>
 
           <div class="form__field flex flex--column">
             <label class="form__label" for=”password”>Contraseña</label>
             <input class="form__input <?=$errorPassword?>" type="password" id="password" name="password" value="">
-            <p class="form--error"><?php if (count($errores) > 0) { echo "$errores[password]"; } ?></p>
+            <p class="form--error"><?php if (!empty($errores["password"])) { echo "$errores[password]"; } ?></p>
           </div>
 
           <div class="form__field flex">

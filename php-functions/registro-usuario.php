@@ -16,7 +16,7 @@
   
   if ($_POST) {
 	  
-    $errores = validarInformacion($_POST);
+    $errores = validateRegister($_POST);
     if (count($errores) == 0) {
       $usuario = crearUsuario($_POST);
 

@@ -1,6 +1,9 @@
 <?php
-    require_once 'php-functions/funciones.php';
+    require("loader.php");
 
-    logout();
-    header('Location: ../login.php');
+    $auth->logout();
+    
+    header("Location: registro.php");
+    exit;
+
 ?>

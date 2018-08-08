@@ -1,6 +1,8 @@
 <?php
   require_once "funciones.php";
 
+  $username = "";
+
   function login($usuario) {
     $_SESSION["email"] = $usuario["email"];
     setcookie("email", $usuario["email"], time()+3600);

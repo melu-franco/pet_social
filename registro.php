@@ -8,6 +8,7 @@
 	$emailDefault = "";
 
   $errores = [];
+  
   $nombre = "";
   $email = "";
   $username = "";
@@ -15,16 +16,15 @@
 	if ($_POST) {
 		$errores = $validator->validateRegister($_POST, $db);
 
-
 		if (!isset($errores["email"])) {
 			$emailDefault = $_POST["email"];
 		}
 
 		if (count($errores) == 0) {
-			$usuario = new User($_POST["nombre"],$_POST["usuario"], $_POST["email"], $_POST["password"]);
+			$usuario = new User(null, $_POST["nombre"],$_POST["usuario"], $_POST["email"], $_POST["password"]);
 			$usuario = $db->saveUser($usuario);
-			$auth->login($_POST["email"]);
-			header("Location: perfil.php");
+			$auth->login($_POST["usuario"]);
+			header("Location: login.php");
 			exit;
     }
     
@@ -54,12 +54,8 @@
     if (isset($errores["usuario"])) {
       $errorUsername = "error";
     }
-	}
-
-	if ($auth->loginControl()) {
-		header("Location:perfil.php");
-		exit;
-	}
+  }
+  
 ?>
 
 <!DOCTYPE html>

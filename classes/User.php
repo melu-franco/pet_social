@@ -8,19 +8,17 @@ class User {
    private $password;
    private $profilephoto;
 
-   public function __construct($fullname, $username, $email, $password, $profilephoto, $id = null) {
-
-        $this->fullname = $fullname;
-        $this->username = $username;
-        $this->email = $email;
-        $this->photo= $photo;
-        $this->id = $id;
-        
+   public function __construct($id = null, $fullname, $username, $email, $password, $profilephoto = null) {
         if ($id == null) {
             $this->password = password_hash($password, PASSWORD_DEFAULT);
         } else {
             $this->password = $password;
         }
+        $this->fullname = $fullname;
+        $this->username = $username;
+        $this->email = $email;
+        $this->profilephoto= $profilephoto;
+        $this->id = $id;
    }
 
    public function getStatus() {
@@ -134,6 +132,26 @@ class User {
     }
     */
 
+
+   /**
+    * Get the value of profilephoto
+    */ 
+   public function getProfilephoto()
+   {
+      return $this->profilephoto;
+   }
+
+   /**
+    * Set the value of profilephoto
+    *
+    * @return  self
+    */ 
+   public function setProfilephoto($profilephoto)
+   {
+      $this->profilephoto = $profilephoto;
+
+      return $this;
+   }
 }
 
 
