@@ -1,5 +1,5 @@
 .dashboard {
-    background: $light-gray;
+    background: #f6f6f6;
     @at-root #{&}--nav {
         position: fixed;
         z-index: 999;
@@ -189,6 +189,92 @@
         transform: translate3d(200px, 0, 0);
         width: calc(100% - 250px);
         transition: transform .45s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .section {
+        @at-root #{&}--new-post {
+            width: 500px;
+            margin: auto;
+            padding-bottom: 2em;
+            margin-bottom: 4em;
+            border-bottom: 1px solid #ccc;
+        }
+        @at-root #{&}--posts {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+    }
+
+    .post {
+        width: 48%;
+        padding: 1.5em;
+        margin-bottom: 2%;
+        background: white;
+        position: relative; 
+        @media (max-width: 768px) {
+            width: 100%;
+            float: none !important;
+        } 
+        &:nth-child(odd) {
+            float: left;
+            clear: left;
+            &:before {
+                content: "";
+                width: 0; 
+                height: 0; 
+                top: 45%;
+                right:-10px; 
+                position: absolute;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                
+                border-left: 10px solid white;
+            }
+        }
+        &:nth-child(even) {
+            float: right;    
+            clear: right;
+            &:before {
+                content: "";
+                width: 0; 
+                height: 0; 
+                top: 45%;
+                left:-10px; 
+                position: absolute;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                
+                border-right: 10px solid white;
+            }
+        }
+        @at-root #{&}__text {
+
+        }
+        @at-root #{&}__info {
+            margin: 1em 0;
+            font-weight: 600;
+        }
+        @at-root #{&}__interaction {
+            margin-top: 1em;
+            a {
+                color: $blue;
+                font-size: .8em;
+                &:not(:first-child):before {
+                    content: "|";
+                    padding-right: 5px;
+                }
+
+            }
+        }
+    }
+
+    .form {
+        @at-root #{&}--create-post {
+            textarea {
+                width: 100%;
+                resize: none;
+            }
+        }
     }
       
 }

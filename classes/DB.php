@@ -22,6 +22,7 @@
             }
         }
         
+        //User
         public function saveUser(User $user) {
             $query = "INSERT INTO users VALUES (default, :fullname, :username, :email, :password, null)";
             // var_dump($user);
@@ -33,9 +34,7 @@
             $stmt->bindValue(':email', $user->getEmail());
             $stmt->bindValue(':password', $user->getPassword());
   
-
             $stmt->execute();
-
 
             $id = $this->conn->lastInsertId();
             $user->setId($id);
@@ -77,8 +76,7 @@
             }
         }
         
-        public function fetchBase()
-        {
+        public function fetchBase() {
             $query = 'SELECT * FROM users';
 
             $stmt = $this->conn->prepare($query);
@@ -94,6 +92,41 @@
             return $usersFoundReturn;
         
         }
+
+        public function savePost(Post $post) {
+            $query = "INSERT INTO posts VALUES (default, :userid, :content, default, default, 0)";
+    
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(':userid', $post->getUser_id());
+            $stmt->bindValue(':content', $post->getContent());
+    
+            $stmt->execute();
+    
+            $id = $this->conn->lastInsertId();
+            $post->setId($id);
+    
+            return $post;
+        }
+
+        public function fetchPosts() {
+            $query = 'SELECT * FROM posts JOIN users ON post.user_id = users.id ORDER BY post.id DESC LIMIT 20';
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            
+            $postsFound = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            $potsFoundReturn = [];
+     
+            foreach ($postsFound as $post):
+                $user = new User($user['id'],$user['fullname'],$user['username'],$user['email'], $user['password'], $user['profilephoto']);
+                $postsFoundReturn[] = new Post($user, $fullname, $post['content'],$post['created_at']);
+            endforeach;
+
+            return $postsFoundReturn;
+        
+        }
+
     }
     
 ?>

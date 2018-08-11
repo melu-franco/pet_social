@@ -78,6 +78,18 @@ class Validator {
             }
             return $errores;
         }
+
+        function validatePosts($datos) {
+            $errores = [];
+    
+            foreach ($datos as $clave => $valor) {
+                $datos[$clave] = trim($valor);
+            }
+            if (empty($datos["post-content"])) {
+                $errores["post-content"] = "Debe ingresar un comentario";
+            }
+            return $errores;
+        }
     
     }
 

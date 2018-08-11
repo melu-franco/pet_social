@@ -27,7 +27,7 @@ $username = "";
     if (count($errores) == 0) {
             $username = $_POST["usuario"];
             $auth->login($username);
-          header("Location:perfil.php");
+          header("Location:dashboard/index.php");
       exit;
     }
 }

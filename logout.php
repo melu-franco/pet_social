@@ -3,7 +3,7 @@
 
     $auth->logout();
     
-    header("Location: registro.php");
+    header("Location: login.php");
     exit;
 
 ?>

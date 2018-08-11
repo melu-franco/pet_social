@@ -21,38 +21,6 @@ class User {
         $this->id = $id;
    }
 
-   public function getStatus() {
-
-   }
-
-   public function getFriends() {
-
-   }
-
-   public function sendFriendRequest() {
-
-   }
-
-   public function acceptFriendRequest() {
-
-   }
-
-//    public function cancelFriendRequest() {
-
-//     }
-
-   public function deleteFriends() {
-
-    }
-
-   public function changeSettings() {
-                    
-    }
-
-   public function deleteUser() {
-            
-   }
-
     public function getId() {
        return $this->id;
     }
@@ -96,6 +64,38 @@ class User {
     public function setPassword($password) {
         $this->password = $password;
         return $this;
+    }
+
+    public function getStatus() {
+
+    }
+ 
+    public function getFriends() {
+ 
+    }
+ 
+    public function sendFriendRequest() {
+ 
+    }
+ 
+    public function acceptFriendRequest() {
+ 
+    }
+ 
+ //    public function cancelFriendRequest() {
+ 
+ //     }
+ 
+    public function deleteFriends() {
+ 
+     }
+ 
+    public function changeSettings() {
+                     
+     }
+ 
+    public function deleteUser() {
+             
     }
 
     /*
