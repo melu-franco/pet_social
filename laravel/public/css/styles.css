@@ -248,6 +248,10 @@ main {
   overflow: hidden;
 }
 
+.container {
+  max-width: 100% !important;
+}
+
 p {
   line-height: 1.4em;
 }
@@ -573,6 +577,17 @@ strong {
 .form--error {
   color: #ff4d00;
   font-size: 0.8em;
+}
+
+.form .was-validated .form-control:invalid, .form .form-control.is-invalid, .form .was-validated .custom-select:invalid, .form .custom-select.is-invalid {
+  border-color: #ff4d00;
+}
+
+.form .invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #ff4d00;
 }
 
 /* Footer */

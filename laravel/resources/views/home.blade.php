@@ -1,6 +1,4 @@
-@extends ('app.layout')
-
-@section('title', 'Little Paws')
+@extends('layouts.app')
 
 @section('content')
 
@@ -13,7 +11,7 @@
 
     <section class="section section--desc container t-center">
         <p class="section__text -auto"><strong>Little Paws</strong>  no es una red social, es un punto de encuentro. Porque si no nos encontramos, nunca vamos a entender la importancia de estar juntos.</p>
-        <a class="-auto btn btn--green max-width" href="registro">Registrarme</a>
+        <a class="-auto btn btn--green max-width" href="{{ route('register') }}">Registrarme</a>
     </section>
 
     <section class="section section--info t-center bg-home--info container" >
@@ -22,7 +20,7 @@
 
     <section class="section section--cta -bg-primary flex flex--align-center flex--space-between container">
         <p class="section__text -color-white">Creá tu perfil gratis ahora!</p>
-        <a href="registro" class="btn btn--white">Unirme</a>
+        <a href="{{ route('register') }}" class="btn btn--white">Unirme</a>
     </section>
 
 </div>

@@ -11,8 +11,6 @@
 |
 */
 
-Auth::routes();
-
 Route::get('/', function () {
     return view('home');
 });
@@ -21,14 +19,13 @@ Route::get('/faqs', function () {
     return view('faqs');
 });
 
-Route::get('/registro', function () {
-    return view('registro');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Auth::routes();
 
+// Registration Routes...
+$this->get('registro', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('registro', 'Auth\RegisterController@register');
 
-
-Route::get('/home', 'HomeController@index')->name('home');

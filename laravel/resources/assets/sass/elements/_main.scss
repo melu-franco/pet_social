@@ -33,7 +33,11 @@ body {
 main {
     overflow: hidden;
 }
-  
+
+.container {
+    max-width: 100% !important;
+}
+
 p {
     line-height: $base-line-height;
 }
