@@ -23,9 +23,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+
+
+//Route::get('/dashboard', 'PostController@createPost');
+Route::post('/dashboard', 'PostController@createPost');
+
+
 Auth::routes();
 
 // Registration Routes...
 $this->get('registro', 'Auth\RegisterController@showRegistrationForm')->name('register');
 $this->post('registro', 'Auth\RegisterController@register');
-
