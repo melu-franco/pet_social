@@ -77,6 +77,10 @@ module.exports = __webpack_require__("./node_modules/axios/lib/axios.js");
 
 "use strict";
 
+$('.post').find('.post__interaction').find('a').eq(1).on('click',function(){
+  $('#edit-modal').modal();
+});
+
 
 var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
 var settle = __webpack_require__("./node_modules/axios/lib/core/settle.js");

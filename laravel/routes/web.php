@@ -19,10 +19,22 @@ Route::get('/faqs', function () {
     return view('faqs');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//});
 
+Route::get('/dashboard', [
+  'uses'=>'PostController@getDashboard',
+  'as'=>'dashboard',
+  'middleware'=>'auth',
+
+]);
+
+Route::get('/post.delete/{post_id}', [
+  'uses'=>'PostController@getDeletePost',
+  'as'=>'post.delete',
+  'middleware'=>'auth',
+]);
 
 
 //Route::get('/dashboard', 'PostController@createPost');
